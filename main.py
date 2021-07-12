@@ -74,11 +74,6 @@ data = pd.concat([data_churn , data] , axis = 0)
 X_train = data[num_cols+cat_cols]
 y_train = data[target_col]
 
-scaler = StandardScaler()
-log_model = LogisticRegression(C = 75 , penalty='l2').fit(scaler.fit_transform(X_train[num_cols]) , y_train)
-
-
-
 
 X, y = data[num_cols + cat_cols], data[target_col]
 X['sq1'] = X['MonthlySpending']**2
